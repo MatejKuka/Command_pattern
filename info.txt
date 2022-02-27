@@ -1,0 +1,28 @@
+- Singleton class
+
+private static MainPageModel single_instance = null;
+
+    public static MainPageModel getInstance() throws MovieCollectionManagerException {
+        if (single_instance == null)
+            single_instance = new MainPageModel();
+
+        return single_instance;
+    }
+
+.in another class:
+        MainPageModel mainPageModel;
+public MainPageController() throws MovieCollectionManagerException {
+        mainPageModel = MainPageModel.getInstance();
+
+    }
+----------------------------------------------------------------------------------------
+- Setting up tableview:
+
+nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        ratingColumn.setCellValueFactory(new PropertyValueFactory<>("rating"));
+        imdbRatingColumn.setCellValueFactory(new PropertyValueFactory<>("imdb"));
+        lastViewColumn.setCellValueFactory(new PropertyValueFactory<>("lastView"));
+        tableView.setItems(mainPageModel.getMovieObservableList());
+
+-------------------------------------------------------------------------------------------
+
