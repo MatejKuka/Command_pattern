@@ -18,7 +18,7 @@ public class Dall {
     public void testMethod () {
         try(Connection con = connector.getConnection()) {
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM employee");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Employee");
             System.out.println("si gay? " + rs);
 
             //String readSQL = rs.getNString("Name");
