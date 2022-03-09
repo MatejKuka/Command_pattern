@@ -7,11 +7,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Dall {
+public class Dal {
 
     private DBconnector connector;
 
-    public Dall() throws IOException {
+    public Dal() throws IOException {
         connector = new DBconnector();
     }
 
@@ -21,8 +21,6 @@ public class Dall {
             ResultSet rs = stmt.executeQuery("SELECT * FROM Employee");
             System.out.println("si gay? " + rs);
 
-            //String readSQL = rs.getNString("Name");
-            //System.out.println(readSQL);
         }
         catch (Exception sqle){
             System.out.println("Error: " + sqle);
