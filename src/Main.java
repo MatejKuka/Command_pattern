@@ -27,6 +27,10 @@ public class Main {
         Command printMoney2 = new PrintMoney(account2, 500);
         Command printMoney3 = new PrintMoney(account3, 650);
 
+        account1.printBalance();
+        account2.printBalance();
+        account3.printBalance();
+
         Stack<Command> commandStack = new Stack<>();
 
         CommandInvoker invoker = new CommandInvoker(printMoney1);
@@ -69,6 +73,17 @@ public class Main {
         invoker.unExecuteCommand();
         bankActions();
 
+        System.out.println("Rollback is coming...");
+        while(!commandStack.isEmpty()) {
+            bankActions();
+            command = commandStack.pop();
+            invoker = new CommandInvoker(command);
+            invoker.unExecuteCommand();
+        }
+
+        account1.printBalance();
+        account2.printBalance();
+        account3.printBalance();
 
     }
 
@@ -79,5 +94,11 @@ public class Main {
             System.out.println(ex);
         }
     }
+
+    private void printBalances() {
+
+    }
+
+
 
 }

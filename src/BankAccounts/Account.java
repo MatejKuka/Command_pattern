@@ -25,6 +25,10 @@ public class Account {
         this.name = name;
     }
 
+    public void printBalance(){
+        System.out.println(name + " : " + balance);
+    }
+
     @Override
     public String toString() {
         return name;
