@@ -3,11 +3,7 @@ import Commands.Command;
 import Commands.DoTransfer;
 import Commands.PrintMoney;
 import Invoker.CommandInvoker;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+
 
 import java.util.Stack;
 
