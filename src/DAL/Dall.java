@@ -7,11 +7,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Dal {
+public class Dall {
 
     private DBconnector connector;
 
-    public Dal() throws IOException {
+    public Dall() throws IOException {
         connector = new DBconnector();
     }
 
@@ -21,6 +21,8 @@ public class Dal {
             ResultSet rs = stmt.executeQuery("SELECT * FROM Employee");
 
 
+            //String readSQL = rs.getNString("Name");
+            //System.out.println(readSQL);
         }
         catch (Exception sqle){
             System.out.println("Error: " + sqle);
