@@ -19,7 +19,7 @@ public class Dal {
         try(Connection con = connector.getConnection()) {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM Employee");
-            System.out.println("si gay? " + rs);
+
 
         }
         catch (Exception sqle){
